@@ -1,4 +1,49 @@
 ## Code Listing
+Rectangle
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Summative_8.Shapes
+{
+    internal class Rectangle : Shape
+    {
+        public const int MIN_HEIGHT = 0;
+        public const int MAX_HEIGHT = 50;
+        public const int MIN_WIDTH = 0;
+        public const int MAX_WIDTH = 50;
+
+        private float _Height;
+        private float _Width;
+        public float Height { get; set; }
+        public float Width { get; set; }
+        public Rectangle(float width, float height, Colour colour)
+        {
+            Width = width;
+            Height = height;
+            ShapeColour = colour;
+        }
+
+        public override float Area()
+        {
+            return _Height * _Width;
+        }
+
+        public override float Perimeter()
+        {
+            return 2 * _Width + 2 * _Height;
+        }
+
+        public override string ToString()
+        {
+            return $"{ShapeColour} Rectangle with height {Height} and width {Width}.";
+        }
+    }
+}
+```
 AddRectangleMenuItem
 ```cs
 using Summative_8.Shapes;
